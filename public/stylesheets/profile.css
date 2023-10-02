@@ -1,0 +1,46 @@
+body {
+    font-size: 1.2em;
+    font-weight: bolder;
+}
+
+table.inventory {
+    table-layout: fixed;
+}
+
+td.inventory {
+    word-wrap: break-word;
+}
+
+#centuries {
+    margin-left: 10%;
+    margin-right: 10%;
+}
+
+.progress-bar {
+    background-color: #6EA3C8 !important;
+}
+
+#specifier {
+    width: 3%;
+    height: 3%;
+}
+
+#site {
+    border-bottom: 2px dotted black;
+}
+
+#img-profile {
+    width: 15%;
+    height: 15%;
+    margin-left: 42.5%;
+    border: 2px solid black;
+}
+
+
+
+
+
+
+
+
+

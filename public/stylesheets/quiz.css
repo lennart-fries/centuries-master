@@ -1,0 +1,32 @@
+body {
+    font-size: 1.2em;
+    font-weight: bolder;
+}
+
+.quiz {
+    padding: 0.5%;
+}
+
+.btn {
+    float: right;
+}
+
+.progress-bar {
+    background-color: #6EA3C8 !important;
+}
+
+.quiz-name {
+    font-size: 150%;
+}
+
+#specifier {
+    width: 3%;
+    height: 3%;
+}
+
+#site {
+    border-bottom: 2px dotted black;
+}
+
+
+

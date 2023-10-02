@@ -1,0 +1,35 @@
+@()
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <link rel="stylesheet" type="text/css" href=@routes.Assets.versioned("stylesheets/centuries.css")>
+        <link rel="stylesheet" type="text/css" href="@routes.Assets.versioned("stylesheets/sidenav.css")">
+        <script src="@routes.Assets.versioned("javascripts/jquery-3.3.1.js")" type="text/javascript"></script>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    </head>
+    <body>
+        <ul class="nav nav-pills nav-stacked sidenav">
+            <li role="presentation"><a href="@routes.MapController.map()"><img class="logo" src="@routes.Assets.versioned("images/centuries_small.png")"></a> </li>
+            <li role="presentation"><a href="@routes.MapController.map()"><img class="navImg" src="@routes.Assets.versioned("images/compass.png")">
+                <div class="name">Map</div></a>
+            </li>
+            <li role="presentation"><a href="@routes.QuizController.quiz()"><img class="navImg" src="@routes.Assets.versioned("images/quiz.png")">
+                <div class="name">Quiz</div></a>
+            </li>
+            <li role="presentation"><a href="@routes.ProfileController.profile()"><img class="navImg" src="@routes.Assets.versioned("images/user.png")">
+                <div class="name">Profile</div></a>
+            </li>
+            <li role="presentation"><a href="@routes.FriendsController.friendsPage()"><img class="navImg" src="@routes.Assets.versioned("images/friends.png")">
+                <div class="name">Social</div></a>
+            </li>
+            <li role="presentation"><a href="@routes.MarketplaceController.marketplace()"><img class="navImg" src="@routes.Assets.versioned("images/marketplace.png")">
+                <div class="name">Market</div></a>
+            </li>
+            <li role="presentation"><a href="@routes.LoginController.logout()"><img class="navImg" src="@routes.Assets.versioned("images/logout.png")">
+                <div class="name">Logout</div></a>
+            </li>
+        </ul>
+    </body>
+</html>

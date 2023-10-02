@@ -1,0 +1,35 @@
+@(registerForm: Form[UserFactory#User])
+@import helper._
+
+    <html>
+        <header>
+            <meta charset="UTF-8">
+            <title>Register</title>
+            <link rel="stylesheet" type="text/css" href=@routes.Assets.versioned("stylesheets/centuries.css")>
+            <link rel="stylesheet" type="text/css" href=@routes.Assets.versioned("stylesheets/register.css")>
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+            <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        </header>
+        <body>
+            <div class="container-fluid">
+                <div id="register">
+                @helper.form(CSRF(routes.LoginController.register()), 'id -> "registerForm", 'class -> "form-group") {
+                    <h2 id="loginDialog">Register <small> Tell us something about yourself!</small></h2>
+                    @helper.inputText(registerForm("username"), '_label -> "Username", 'class -> "form-control")
+                    @helper.inputPassword(registerForm("password"), '_label -> "Password", 'class -> "form-control")
+                    @helper.inputText(registerForm("email"), '_label -> "Email", 'class -> "form-control")
+                    <button id="registerButton" type="submit" class="btn btn-default">
+                        <span class="glyphicon glyphicon-user"></span> Sign up now!
+                    </button>
+                }
+                </div>
+
+                <div id="register">
+                    <p>You already have an Account?</p>
+                    <a id="registerLink" href="login" class="btn btn-default">
+                        <span class="glyphicon glyphicon-chevron-left"></span> Go back to Login!</a>
+                </div>
+
+            </div>
+        </body>
+    </html>

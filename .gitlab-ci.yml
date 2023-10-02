@@ -1,0 +1,39 @@
+stages:
+  - build
+  - release
+  - deploy
+
+build-dist:
+  stage: build
+  image: "primetoninc/jdk:1.8"
+  script:
+    - ./sbt -ivy `pwd`/ivy2 dist
+  artifacts:
+    paths:
+      - target/universal/play-java-starter-example-1.0-SNAPSHOT.zip
+    expire_in: 20 minutes
+  cache:
+    untracked: true
+    paths:
+      - ivy2
+
+dockerise:
+  image: docker:latest
+  stage: release
+  script:
+    - docker login -u gitlab-ci-token -p $CI_JOB_TOKEN gitlab2.informatik.uni-wuerzburg.de:4567
+    - docker build --pull -t gitlab2.informatik.uni-wuerzburg.de:4567/delovo/centuries .
+    - docker push gitlab2.informatik.uni-wuerzburg.de:4567/delovo/centuries
+
+hci-deploy:
+  stage: deploy
+  image: "kroniak/ssh-client"
+  script:
+    - mkdir ~/.ssh
+    - ssh-keyscan 132.187.8.142 >> ~/.ssh/known_hosts
+    - chmod 600 deploy
+    - ssh fkt37kn@132.187.8.142 -i deploy "~/deploy.sh"
+
+cache:
+  paths:
+    - /root/.sbt

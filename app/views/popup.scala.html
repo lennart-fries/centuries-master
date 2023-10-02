@@ -1,0 +1,18 @@
+@(content: Html)
+<!DOCTYPE html>
+<html lang="en" lang="de">
+    <head>
+        <link rel="stylesheet" type="text/css" href=@routes.Assets.versioned("stylesheets/centuries.css")>
+        <link rel="stylesheet" type="text/css" href=@routes.Assets.versioned("stylesheets/popup.css")>
+    </head>
+    <body>
+        <div class="popup" data-popup="popup-1">
+            <div class="popup-outer">
+                <a class="popup-close" data-popup-close="popup-1" href="@routes.MapController.map()">x</a>
+                <div class="popup-inner">
+                @content
+                </div>
+            </div>
+        </div>
+
+    </body>

@@ -1,0 +1,38 @@
+body {
+    background: url("../images/alteMainbruecke.jpg") no-repeat;
+    background-size: 110%;
+    overflow: hidden;
+}
+
+.container-fluid {
+    width: 30%;
+    text-align: center;
+    margin-top: 10%;
+}
+
+#login {
+    text-align: center;
+    background-color: rgba(255, 249, 240, 0.8);
+    margin: 5px;
+    padding: 2px;
+    border: 1px solid black;
+}
+
+#register {
+    background-color: rgba(255, 249, 240, 0.8);
+    text-align: center;
+    margin: 5px;
+    padding: 2px;
+    border: 1px solid black;
+}
+
+.form-control {
+    text-align: center;
+}
+
+#centuries {
+    width: 80%;
+    margin-left: 10%;
+    margin-bottom: 10%;
+}
+

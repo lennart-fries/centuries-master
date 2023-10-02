@@ -1,0 +1,52 @@
+@(market: Marketplace, user: models.UserFactory#User)
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Market</title>
+        <link rel="stylesheet" type="text/css" href="@routes.Assets.versioned("stylesheets/centuries.css")">
+        <link rel="stylesheet" type="text/css" href="@routes.Assets.versioned("stylesheets/marketplace.css")">
+        <script src="@routes.Assets.versioned("javascripts/marketplace.js")"></script>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    </head>
+    <body>
+        <h1 id="site"><span><img id="specifier" src="@routes.Assets.versioned("images/marketplace.png")"></span>
+            Market</h1>
+        <div id="cards" class="container-fluid">
+            <div class="row centered">
+                <div id="fool" class="col-sm-4">
+                    <img class="img-rounded img-responsive img-card" src="@routes.Assets.versioned("images/TheFool.jpg")">
+                    <p>Costs: @TarotCard.FOOL.getCost <img id="img-coin" src="@routes.Assets.versioned("images/coins.png")">
+                        <br>
+                        <br>
+                        Owned: @user.getCards.get(TarotCard.FOOL)</p>
+                    <button type="button" class="btn btn-default" onclick="buyCard('FOOL')">Buy this Card!</button>
+                </div>
+
+                <div id="wheel" class="col-sm-4">
+                    <img class="img-rounded img-responsive img-card" src="@routes.Assets.versioned("images/WheelOfFortune.jpg")">
+                    <p>Costs: @TarotCard.WHEEL_OF_FORTUNE.getCost <img id="img-coin" src="@routes.Assets.versioned("images/coins.png")">
+                        <br>
+                        <br>
+                        Owned: @user.getCards.get(TarotCard.WHEEL_OF_FORTUNE)</p>
+                    <button type="button" class="btn btn-default" onclick="buyCard('WHEEL_OF_FORTUNE')">Buy this Card!</button>
+                </div>
+
+                <div id="judgement" class="col-sm-4">
+                    <img class="img-rounded img-responsive img-card" src="@routes.Assets.versioned("images/Judgement.jpg")">
+                    <p>Costs: @TarotCard.JUDGEMENT.getCost <img id="img-coin" src="@routes.Assets.versioned("images/coins.png")">
+                        <br>
+                        <br>
+                        Owned: @user.getCards.get(TarotCard.JUDGEMENT)</p>
+                    <button type="button" class="btn btn-default" onclick="buyCard('JUDGEMENT')">Buy this Card!</button>
+                </div>
+            </div>
+
+            <div id="coins">
+                <p>You currently own @user.getCoins <img id="img-coin" src="@routes.Assets.versioned("images/coins.png")">
+                    to spend on new Cards! </p>
+            </div>
+
+        </div>
+    </body>
+</html>

@@ -1,0 +1,18 @@
+body {
+    background: url("../images/alteMainbruecke.jpg") no-repeat;
+    background-size: 110%;
+}
+
+.container-fluid {
+    width: 30%;
+    text-align: center;
+    margin-top: 10%;
+}
+
+#register {
+    text-align: center;
+    background-color: rgba(255, 249, 240, 0.8);
+    margin: 5px;
+    padding: 2px;
+    border: 1px solid black;
+}

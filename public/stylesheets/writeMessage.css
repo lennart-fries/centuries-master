@@ -1,0 +1,21 @@
+body {
+    font-size: 1.2em;
+    font-weight: bolder;
+}
+
+#specifier {
+    width: 3%;
+    height: 3%;
+}
+
+#site {
+    border-bottom: 2px dotted black;
+}
+
+label {
+    font-size: x-large;
+}
+
+#receiverSelect, #comment {
+    font-size: large;
+}

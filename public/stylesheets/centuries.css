@@ -1,0 +1,15 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    font-family: "Goody Old Style";
+    font-weight: bolder;
+}
+
+h1,
+h2,
+h3 {
+    text-align: center;
+    margin: 0 0 .5em;
+    padding: 0 0 .25em;
+}
+

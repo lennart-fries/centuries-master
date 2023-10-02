@@ -1,0 +1,74 @@
+body {
+    font-size: 1.2em;
+    font-weight: bolder;
+}
+
+p {
+    text-align: center;
+}
+
+#specifier {
+    width: 3%;
+    height: 3%;
+}
+
+#site {
+    border-bottom: 2px dotted black;
+}
+
+.question {
+    margin: auto;
+}
+
+.btn-default, .btn-danger {
+    margin: 2%;
+    width: 45%;
+    height: auto;
+    border: 2px solid black;
+    white-space: normal;
+}
+
+.btn-img {
+    margin-top: 1%;
+    margin-left: 5%;
+    border: 2px solid black;
+    width: 10%;
+    height: 10%;
+}
+
+.btn-warning {
+    margin-top: 1%;
+    margin-left: 5%;
+    width: 40%;
+}
+
+.btn-success {
+    float: right;
+    margin-right: 5%;
+    margin-top: 1%;
+}
+
+.answer {
+    white-space: normal;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    text-align: center;
+}
+
+#quiz-end {
+    width: 60%;
+    margin-left: 20%;
+    margin-top: 10%;
+    text-align: center;
+    font-weight: normal;
+    font-size: x-large;
+}
+
+.status {
+    margin-top: 10%;
+    text-align: center;
+    font-weight: normal;
+    font-size: x-large;
+    width: 40%;
+    margin-left: 30%;
+}

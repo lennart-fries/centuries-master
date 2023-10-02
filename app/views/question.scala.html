@@ -1,0 +1,39 @@
+@(question: QuestionFactory#Question, user: UserFactory#User)
+<!DOCTYPE html>
+<html lang="en" lang="de">
+    <head>
+        <meta charset="UTF-8">
+        <title>Question</title>
+        <script src="@routes.Assets.versioned("javascripts/question.js")"></script>
+        <link rel="stylesheet" type="text/css" href=@routes.Assets.versioned("stylesheets/centuries.css")>
+        <link rel="stylesheet" type="text/css" href=@routes.Assets.versioned("stylesheets/question.css")>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    </head>
+    <body>
+        <h1 id="site"><span><img id="specifier" src="@routes.Assets.versioned("images/quiz.png")"></span> Questions</h1>
+
+        <div id="con" class="container-fluid">
+            <p hidden id="quizid">@question.getQuizIdFromDbByQuestionId</p>
+
+            <div id="question">
+                <h3 id="content">@question.getContent</h3>
+                <button type="button" class="btn btn-lg btn-default" onclick="setParameters(1)"><p class="answer">@question.getAnswerAtIndex(1)</p></button>
+                <button type="button" class="btn btn-lg btn-default" onclick="setParameters(2)"><p class="answer">@question.getAnswerAtIndex(2)</p></button><br>
+                <button type="button" class="btn btn-lg btn-default" onclick="setParameters(3)"><p class="answer">@question.getAnswerAtIndex(3)</p></button>
+                <button type="button" class="btn btn-lg btn-default" onclick="setParameters(4)"><p class="answer">@question.getAnswerAtIndex(4)</p></button>
+                <p hidden id="questionid">@question.getID</p>
+            </div>
+
+            <img class="btn btn-img" src="@routes.Assets.versioned("images/TheFool.jpg")" onclick="chooseCard('FOOL')">
+            <img class="btn btn-img" src="@routes.Assets.versioned("images/WheelOfFortune.jpg")" onclick="chooseCard('WHEEL_OF_FORTUNE')">
+            <img class="btn btn-img" src="@routes.Assets.versioned("images/Judgement.jpg")" onclick="chooseCard('JUDGEMENT')">
+            <button type="button" class="btn btn-lg btn-success" name="answer-submit" onclick="submitAnswer()" disabled>
+                Submit your Answer!</button>
+            <br>
+            <button type="button" class="btn btn-lg btn-warning" name="card-submit" onclick="useSelectedCard()" disabled>
+                Use the selected Card!</button>
+
+        </div>
+    </body>
+</html>

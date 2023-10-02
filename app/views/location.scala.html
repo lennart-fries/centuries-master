@@ -1,0 +1,49 @@
+@(location: Location, user: UserFactory#User)
+<!DOCTYPE html>
+<html lang="en" lang="de">
+    <head>
+        <meta charset="UTF-8">
+        <title>@location.getName</title>
+        <link rel="stylesheet" type="text/css" href=@routes.Assets.versioned("stylesheets/centuries.css")>
+        <link rel="stylesheet" type="text/css" href=@routes.Assets.versioned("stylesheets/location.css")>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    </head>
+    <body>
+        @sidenav()
+
+        <div class="container-fluid">
+
+            <div id="image">
+                <img id="locationImage" src="@routes.Assets.versioned(location.getBackgroundPath)">
+                <img id="guide" src="@routes.Assets.versioned("images/guide.png")">
+            </div>
+            <div id="back">
+                <button type="button" class="btn btn-default" onclick="window.location.href = '/map'">
+                    <span href="/map" class="glyphicon glyphicon-chevron-left">Back </span>
+                </button>
+            </div>
+
+            <h1 id="name">@location.getName</h1>
+
+            <div id = "Information">
+            @for(info <- location.getLocationData) {
+                <div contenteditable="true">@Html(info.getContent)</div>
+
+                <br>
+                <br>
+
+                @if(info.isCoin) {
+                    @if(info.collectCoin(user)) {
+                        <p id="coin-found">
+                            You have found a <img id="img-coin" src="@routes.Assets.versioned("images/coins.png")">
+                            ! You now own @user.getCoins <img id="img-coin" src="@routes.Assets.versioned("images/coins.png")">
+                            ! </p>
+                    }
+                }
+            }
+
+            </div>
+        </div>
+    </body>
+</html>

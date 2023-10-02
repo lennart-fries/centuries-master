@@ -1,0 +1,27 @@
+@(memory: MemoryFactory#Memory)
+
+<html lang="en" lang="de">
+    <head>
+        <meta charset="UTF-8">
+        <title>Memory</title>
+        <link rel="stylesheet" type="text/css" href="@routes.Assets.versioned("stylesheets/centuries.css")">
+        <link rel="stylesheet" type="text/css" href="@routes.Assets.versioned("stylesheets/memory.css")">
+        <script src="@routes.Assets.versioned("javascripts/memory.js")" type="text/javascript"></script>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    </head>
+    <body>
+        <div id="wrapper" class="container-fluid">
+            <div class="row">
+                <p hidden>memory</p>
+                @for(card <- memory.getCards) {
+                    <div class="col-xs-4 col-sm-3 card" >
+                        <button type="button" class="btn btn-default btn-memory" onclick="showOrHideCard(this)" id=@card>
+                            <p class="text" id="@card-text">@card</p>
+                        </button>
+                    </div>
+                }
+            </div>
+        </div>
+    </body>
+</html>

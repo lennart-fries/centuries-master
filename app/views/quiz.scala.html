@@ -1,0 +1,73 @@
+@(quizzes: List[models.QuizFactory#Quiz], user: UserFactory#User)
+<!DOCTYPE html>
+<html lang="en" lang="de">
+    <head>
+        <meta charset="UTF-8">
+        <title>Quiz</title>
+        <link rel="stylesheet" type="text/css" href="@routes.Assets.versioned("stylesheets/centuries.css")">
+        <link rel="stylesheet" type="text/css" href="@routes.Assets.versioned("stylesheets/quiz.css")">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    </head>
+    <body>
+        <h1 id="site"><span><img id="specifier" src="@routes.Assets.versioned("images/quiz.png")"></span> Quizzes</h1>
+        <br>
+
+        <div class="container-fluid">
+            <div>
+                <h3>Quizzes for Romanesque<small>  / These Quizzes are all about the Romanesque Times. If you answer enough of these successfully you can change your Century to Gothic & Renaissance</small></h3>
+                @for(quiz <- quizzes) {
+                    @if(quiz.getCentury.getId == 1) {
+                        <p class="quiz-name">@quiz.getName <span> <a class="btn btn-default" href="@routes.QuizController.question(quiz.getID)">
+                            Take this Quiz</a> </span></p>
+                        <br>
+                        <div class="progress">
+                            <div class="progress-bar progress-bar-striped" role="progressbar" aria-valuenow="@user.getProgressByQuiz(quiz.getID)" aria-valuemin="0" aria-valuemax="100" style="width: @user.getProgressByQuiz(quiz.getID)%">
+                                @user.getProgressByQuiz(quiz.getID)%
+                            </div>
+                        </div>
+                        <br>
+                        }
+                }
+            </div>
+
+            <br>
+
+            <div>
+                <h3>Quizzes for Gothic & Renaissance<small>  / These Quizzes are all about the "Gothic & Renaissance Times". If you answer enough of these successfully you can change your Century to "Baroque"</small></h3>
+                @for(quiz <- quizzes) {
+                    @if(quiz.getCentury.getId == 2) {
+                        <p class="quiz-name">@quiz.getName <span><a class="btn btn-default" href="@routes.QuizController.question(quiz.getID)">
+                            Take this Quiz</a></span></p>
+                        <br>
+                        <div class="progress">
+                            <div class="progress-bar progress-bar-striped" role="progressbar" aria-valuenow="@user.getProgressByQuiz(quiz.getID)" aria-valuemin="0" aria-valuemax="100" style="width: @user.getProgressByQuiz(quiz.getID)%">
+                                @user.getProgressByQuiz(quiz.getID)%
+                            </div>
+                        </div>
+                        <br>
+                        }
+                }
+            </div>
+
+            <br>
+
+            <div>
+                <h3>Quizzes for Baroque<small>  / These Quizzes are all about the Baroque.</small></h3>
+                @for(quiz <- quizzes) {
+                    @if(quiz.getCentury.getId == 3) {
+                        <p class="quiz-name">@quiz.getName <span><a class="btn btn-default" href="@routes.QuizController.question(quiz.getID)">
+                            Take this Quiz</a></span></p>
+                        <br>
+                        <div class="progress">
+                            <div class="progress-bar progress-bar-striped" role="progressbar" aria-valuenow="@user.getProgressByQuiz(quiz.getID)" aria-valuemin="0" aria-valuemax="100" style="width: @user.getProgressByQuiz(quiz.getID)%">
+                                @user.getProgressByQuiz(quiz.getID)%
+                            </div>
+                        </div>
+                        <br>
+                        }
+                }
+            </div>
+        </div>
+    </body>
+</html>

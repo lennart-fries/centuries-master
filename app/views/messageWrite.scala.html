@@ -1,0 +1,25 @@
+@(messageForm: Form[MessageForm], friends: Map[String, String])
+
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Message</title>
+        <link rel="stylesheet" type="text/css" href=@routes.Assets.versioned("stylesheets/centuries.css")>
+        <link rel="stylesheet" type="text/css" href=@routes.Assets.versioned("stylesheets/writeMessage.css")>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    </head>
+    <body>
+        <h1 id="site"><span><img id="specifier" src="@routes.Assets.versioned("images/friends.png")"></span> Socials</h1>
+        <div class="container-fluid">
+        @helper.form((routes.FriendsController.sendMessage()), 'id -> "messageForm", 'class -> "form-group") {
+            @helper.CSRF.formField
+            @helper.select(messageForm("receiver"), helper.options(friends), 'id -> "receiver", 'class -> "form-control")
+            @helper.textarea(messageForm("content"), 'id -> "content", 'class -> "form-control", 'rows -> "5")
+            <button type="submit" id="sendButton" class="btn btn-default">
+                <span class="glyphicon glyphicon-send"></span> Send your Message!
+            </button>
+        }
+        </div>
+    </body>
+</html>

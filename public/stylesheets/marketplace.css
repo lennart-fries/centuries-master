@@ -1,0 +1,58 @@
+body {
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+p {
+    font-size: 150%;
+}
+
+#specifier {
+    width: 3%;
+    height: 3%;
+}
+
+#site {
+    border-bottom: 2px dotted black;
+}
+
+.img-card {
+    width: 202.5px;
+    height: 348.75px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.centered {
+    text-align: center;
+}
+
+#coins {
+    margin-top: 5%;
+    text-align: center;
+}
+
+#coin-value {
+    font-size: 250%;
+}
+
+#img-coin {
+    width: 40px;
+    height: 27.5px;
+    vertical-align: middle;
+}
+
+.status {
+    margin-top: 10%;
+    text-align: center;
+    font-weight: normal;
+    font-size: x-large;
+    width: 40%;
+    margin-left: 30%;
+}
+
+
+
+
+
